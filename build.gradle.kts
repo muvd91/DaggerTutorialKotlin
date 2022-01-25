@@ -14,7 +14,6 @@ repositories {
 }
 
 dependencies {
-    kapt("com.google.dagger:dagger-compiler:2.40")
     testImplementation(kotlin("test"))
 }
 
@@ -23,7 +22,7 @@ tasks.test {
 }
 
 tasks.withType<KotlinCompile>() {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "11"
 }
 
 application {
