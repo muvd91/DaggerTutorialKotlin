@@ -14,6 +14,8 @@ repositories {
 }
 
 dependencies {
+    implementation("com.google.dagger:dagger:2.40.5")
+    kapt("com.google.dagger:dagger-compiler:2.40.5")
     testImplementation(kotlin("test"))
 }
 
