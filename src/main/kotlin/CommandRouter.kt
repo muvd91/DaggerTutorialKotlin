@@ -1,8 +1,11 @@
 import Command.Status
 import javax.inject.Inject
 
-class CommandRouter @Inject constructor() {
-    private val commands: Map<String, Command> = emptyMap()
+class CommandRouter @Inject constructor(helloWorldCommand: HelloWorldCommand) {
+    private val commands: MutableMap<String, Command> = mutableMapOf()
+    init {
+        commands[helloWorldCommand.key()] = helloWorldCommand
+    }
 
     fun route(input: String): Status {
         val splitInput = split(input)
