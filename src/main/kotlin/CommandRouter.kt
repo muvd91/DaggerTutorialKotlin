@@ -1,10 +1,10 @@
 import Command.Status
 import javax.inject.Inject
 
-class CommandRouter @Inject constructor(helloWorldCommand: HelloWorldCommand) {
+class CommandRouter @Inject constructor(command: Command) {
     private val commands: MutableMap<String, Command> = mutableMapOf()
     init {
-        commands[helloWorldCommand.key()] = helloWorldCommand
+        commands[command.key()] = command
     }
 
     fun route(input: String): Status {
