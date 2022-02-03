@@ -1,9 +1,9 @@
+import Command.Status
 import javax.inject.Inject
 
-class HelloWorldCommand @Inject constructor() : Command {
+class HelloWorldCommand @Inject constructor(private val outputter: Outputter) : Command {
     override fun key(): String = "hello"
 
-    override fun handleInput(input: List<String>): Command.Status
-        = if (input.isNotEmpty()) Command.Status.INVALID
-            else Command.Status.HANDLED.also { println("world!") }
+    override fun handleInput(input: List<String>): Status =
+        Status.HANDLED.also { outputter.output("world!") }
 }
