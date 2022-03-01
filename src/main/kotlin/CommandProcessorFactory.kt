@@ -1,3 +1,4 @@
+import UserCommandsRouter.InstallationModule
 import dagger.Component
 import javax.inject.Singleton
 
@@ -6,7 +7,7 @@ import javax.inject.Singleton
     LoginCommandModule::class,
     HelloWorldModule::class,
     SystemOutModule::class,
-    UsersCommandModule::class])
-interface CommandRouterFactory {
-    fun router(): CommandRouter
+    InstallationModule::class])
+interface CommandProcessorFactory {
+    fun processor(): CommandProcessor
 }
