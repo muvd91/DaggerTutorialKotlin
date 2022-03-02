@@ -16,6 +16,11 @@ class Database @Inject constructor() {
             balance = balance.add(amount)
         }
 
+        fun withdraw(amount: BigDecimal) {
+            checkNonNegative(amount, "deposit")
+            balance = balance.subtract(amount)
+        }
+
         private fun checkNonNegative(amount: BigDecimal, action: String) {
             if (amount.signum() == -1) throw IllegalArgumentException("Cannot $action negative amounts: $amount")
         }

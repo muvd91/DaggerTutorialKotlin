@@ -7,6 +7,7 @@ import javax.inject.Singleton
     LoginCommandModule::class,
     HelloWorldModule::class,
     SystemOutModule::class,
+    AmountsModule::class,
     InstallationModule::class])
 interface CommandProcessorFactory {
     fun processor(): CommandProcessor
