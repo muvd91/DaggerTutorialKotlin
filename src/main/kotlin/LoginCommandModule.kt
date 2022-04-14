@@ -1,4 +1,6 @@
+import Database.Account
 import dagger.Binds
+import dagger.BindsOptionalOf
 import dagger.Module
 import dagger.multibindings.IntoMap
 import dagger.multibindings.StringKey
@@ -9,4 +11,7 @@ abstract class LoginCommandModule {
     @IntoMap
     @StringKey("login")
     abstract fun loginCommand(command: LoginCommand): Command
+
+    @BindsOptionalOf
+    abstract fun optionalAccount(): Account
 }
